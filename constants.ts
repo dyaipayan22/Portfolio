@@ -23,15 +23,15 @@ export const MENU_ITEMS = [
 
 export const SOCIAL_ICONS = [
   {
-    image: 'LinkedIn',
+    image: '/linkedin.png',
     url: 'https://www.linkedin.com/in/dyaipayanghosh/',
   },
   {
-    image: 'Twitter',
-    url: 'https://twitter.com/dyaipayan',
+    image: '/github.png',
+    url: 'https://github.com/dyaipayan22',
   },
   {
-    image: 'Github',
-    url: 'https://github.com/dyaipayan22',
+    image: '/twitter.png',
+    url: 'https://twitter.com/dyaipayan',
   },
 ];

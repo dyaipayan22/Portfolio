@@ -1,11 +1,14 @@
 'use client';
 
-import { MENU_ITEMS, SOCIAL_ICONS } from '@/constants';
-import { HamburgerMenuIcon } from '@radix-ui/react-icons';
-import Link from 'next/link';
 import { useState } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { HamburgerMenuIcon } from '@radix-ui/react-icons';
+import { MENU_ITEMS, SOCIAL_ICONS } from '@/constants';
+import Image from 'next/image';
 
 const Navbar = () => {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
   const toggleOpen = () => {
@@ -13,7 +16,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-full h-24 bg-red-200 flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-16">
+    <div className="w-full h-24 flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-16">
       <div className="hidden md:w-1/3 md:flex items-center gap-4">
         {MENU_ITEMS?.map((menu) => (
           <Link href={menu.url} key={menu.url}>
@@ -27,7 +30,7 @@ const Navbar = () => {
       <div className="hidden md:w-1/3 md:flex items-center gap-4 justify-end">
         {SOCIAL_ICONS?.map((icon) => (
           <Link href={icon.url} key={icon.url}>
-            <span>{icon.image}</span>
+            <Image src={icon.image} width={24} height={24} alt="Social Icons" />
           </Link>
         ))}
       </div>
@@ -57,7 +60,12 @@ const Navbar = () => {
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                <span>{icon.image}</span>
+                <Image
+                  src={icon.image}
+                  width={24}
+                  height={24}
+                  alt="Social Icons"
+                />
               </Link>
             ))}
           </div>
